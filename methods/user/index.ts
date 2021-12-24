@@ -1,7 +1,7 @@
-import { Login } from "./Login";
-import { Registration } from "./Registration";
+import { login } from "./login";
+import { registration } from "./registration";
 
 export {
-    Login,
-    Registration
+    login,
+    registration
 }

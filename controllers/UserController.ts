@@ -1,7 +1,14 @@
-import {LoginDto} from "models/dto/loginDto";
-import {Login, Registration} from "../methods/user";
+import {login, registration} from "../methods/user";
 
 module.exports = {
-    login: (data: LoginDto) => Login(data),
-    registration: (data: LoginDto) => Registration(data)
+    login: async (req, res) => {
+        const user = await login(req.body)
+
+        user ? res.json(user) : res.status(400).json({message: 'Некорректные данные'})
+    },
+    registration: async (req, res) => {
+        const user = await registration(req.body)
+
+        user ? res.json(user) : res.status(400).json({message: 'Некорректные данные'})
+    }
 }

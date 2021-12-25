@@ -1,7 +1,13 @@
-import {getAll} from './getAll'
+import {getItems} from './getItems'
 import {takeItems} from "./takeItems";
+import {addItem} from "./addItem";
+import {updateItem} from "./updateItem";
+import {deleteItem} from "./deleteItem";
 
 export {
-    getAll,
-    takeItems
+    getItems,
+    takeItems,
+    addItem,
+    updateItem,
+    deleteItem
 }

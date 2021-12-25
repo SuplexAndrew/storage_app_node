@@ -1,8 +1,6 @@
-import {ItemDto} from "../../models/dto/ItemDto";
+import {Item} from "../../models";
 
-const db = require('../../models')
-
-export const deleteItem = async(itemDto: ItemDto) => {
-    const item = await db['Item'].findOne({where: {id:itemId}})
+export const deleteItem = async(itemId: number) => {
+    const item = await Item.findOne({where: {id: itemId}})
     await item.destroy()
 }

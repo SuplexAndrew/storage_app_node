@@ -29,6 +29,7 @@ export function StatusFactory(sequelize: Sequelize): StatusStatic {
         },
         code: {
             allowNull: false,
+            unique: true,
             type: DataTypes.INTEGER,
         },
         createdAt: {

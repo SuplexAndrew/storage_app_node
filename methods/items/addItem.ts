@@ -1,7 +1,6 @@
 import {ItemDto} from "../../models/dto/ItemDto";
-
-const db = require('../../models')
+import {Item} from "../../models";
 
 export const addItem = async(itemDto: ItemDto) => {
-    return await db['Item'].create(itemDto)
+    return await Item.create(itemDto)
 }

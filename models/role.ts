@@ -1,5 +1,4 @@
 import {BuildOptions, DataTypes, Model, Sequelize} from "sequelize";
-import {UserRole} from "./userRole";
 
 export interface RoleAttributes {
     id?: number
@@ -7,7 +6,12 @@ export interface RoleAttributes {
     value: number
 }
 
-interface RoleModel extends Model<RoleAttributes>, RoleAttributes {
+export interface RoleCreationAttributes {
+    name: string
+    value: number
+}
+
+interface RoleModel extends Model<RoleAttributes, RoleCreationAttributes>, RoleAttributes {
     createdAt?: Date;
     updatedAt?: Date;
 }
@@ -47,5 +51,3 @@ export function RoleFactory(sequelize: Sequelize): RoleStatic {
         },
     });
 }
-
-export default Role

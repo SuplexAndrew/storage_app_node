@@ -1,4 +1,5 @@
 import {BuildOptions, DataTypes, Model, Sequelize} from "sequelize";
+import {ItemDto} from "./dto/ItemDto";
 
 export interface ItemAttributes {
     id?: number
@@ -7,7 +8,7 @@ export interface ItemAttributes {
     countInStorage: number
 }
 
-export interface ItemModel extends Model<ItemAttributes>, ItemAttributes {
+export interface ItemModel extends Model<ItemAttributes, ItemDto>, ItemAttributes {
     createdAt?: Date;
     updatedAt?: Date;
 }

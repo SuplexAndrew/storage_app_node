@@ -1,6 +1,6 @@
 import express from 'express'
 const cors = require('cors')
-import {userRouter, itemsRouter} from "./routers";
+import {userRouter, itemsRouter, ordersRouter} from "./routers";
 const app = express()
 
 const port = 5000;
@@ -16,6 +16,7 @@ app.use(function (req, res, next) {
 });
 app.use('/user', userRouter)
 app.use('/items', itemsRouter)
+app.use('/orders', ordersRouter)
 app.get('/', (request, response) => {
     response.send('Api is working. Use /user to login');
 });

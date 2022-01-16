@@ -42,7 +42,7 @@ async function VerifyAdmin(req, res, next) {
         if (adminVerified) {
             req.user = {...decodedUser, adminRights: true}
         } else {
-            return res.status(403).json({message: 'Not authorized'})
+            return res.status(403).json({message: 'Not admin'})
         }
         next()
     } catch (e) {

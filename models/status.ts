@@ -1,7 +1,7 @@
 import {BuildOptions, DataTypes, Model, Sequelize} from "sequelize";
 
 export interface StatusAttributes {
-    id?: number
+    id: number
     title: string
     code: number
 }

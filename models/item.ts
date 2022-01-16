@@ -2,7 +2,7 @@ import {BuildOptions, DataTypes, Model, Sequelize} from "sequelize";
 import {ItemDto} from "./dto/ItemDto";
 
 export interface ItemAttributes {
-    id?: number
+    id: number
     name: string
     price: number
     countInStorage: number

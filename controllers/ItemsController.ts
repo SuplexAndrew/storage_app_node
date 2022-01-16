@@ -8,7 +8,7 @@ module.exports = {
     addItem: async (req, res) =>
         res.json(await addItem(req.body)),
     updateItem: async (req, res) =>
-        res.json(await updateItem(req.params.id, req.body)),
+        res.json(await updateItem(req.body)),
     deleteItem: async (req, res) =>
-        res.json(await deleteItem(req.params.id)),
+        res.json(await deleteItem(req.params.itemId)),
 }

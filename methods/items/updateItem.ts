@@ -1,6 +1,6 @@
 import {Item} from "../../models";
-import {ItemDto} from "../../models/dto/ItemDto";
+import {ItemAttributes} from "../../models/item";
 
-export const updateItem = async(itemId: number, itemDto: ItemDto) => {
-    return await Item.update({...itemDto},{where: {id:itemId}})
+export const updateItem = async(item: ItemAttributes) => {
+    return await Item.update({...item},{where: {id:item.id}})
 }

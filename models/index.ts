@@ -1,5 +1,5 @@
 import {Sequelize} from "sequelize";
-import {development} from "../config/config";
+import {production} from "../config/config";
 import {OrderFactory}  from "./order";
 import {OrderItemFactory}  from "./orderItem";
 import {ItemFactory}  from "./item";
@@ -8,8 +8,10 @@ import {UserFactory} from "./user";
 import {UserRoleFactory} from "./userRole";
 import {RoleFactory} from "./role";
 
-const sequelize = new Sequelize(development)
-// sequelize.sync({alter: true})
+const sequelize = new Sequelize(production.database_url, {
+  dialect: "postgres"
+})
+sequelize.sync({alter: true})
 
 const User = UserFactory(sequelize)
 const UserRole = UserRoleFactory(sequelize)
